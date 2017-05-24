@@ -1,2 +1,2 @@
 # pydc-crawler
-Direct Connect crawler written in python 
+Direct Connect crawler written in python .
