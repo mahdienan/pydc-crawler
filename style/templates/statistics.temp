@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<title>DCBot Statistics</title>
+		<!-- Font Awesome -->
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+		<!-- Bootstrap core CSS -->
+		<link href="style/css/bootstrap.min.css" rel="stylesheet">
+		<!-- Material Design Bootstrap -->
+		<link href="style/css/mdb.min.css" rel="stylesheet">
+		<!-- Your custom styles (optional) -->
+		<link href="style/css/style.css" rel="stylesheet">
+
+	</head>
+	<body>
+		<div class="container">
+				<div>
+					<br><br>
+					DCbot metadata crawler for forensic lab at TU Darmstadt.<br>
+					2017 - Mahdi Enan and Florian Platzer <br><br>
+				</div>
+		</div>
+
+		<br><br>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="card">
+					  <div class="card-header">
+					    General Informations
+					  </div>
+					  <div class="card-block">
+					    <h4 class="card-title" style="padding-left: 25px;"></h4>
+							<p class="card-text" style="padding-left: 25px;">
+								<$ generalInfo $>
+								<br><br>
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card">
+					  <div class="card-header">
+					    File Informations
+					  </div>
+					  <div class="card-block">
+					    <h4 class="card-title" style="padding-left: 25px;"></h4>
+					    <p class="card-text" style="padding-left: 25px;">
+								<$ fileInfo $>
+							</p>
+					  </div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card">
+					  <div class="card-header">
+					    Filelist Informations
+					  </div>
+					  <div class="card-block">
+					    <h4 class="card-title" style="padding-left: 25px;"></h4>
+							<p class="card-text" style="padding-left: 25px;">
+								<$ fileListInfo $>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+
+		<div class="container">
+			<div class "row">
+				<div class="span3">
+					<br>
+					<div class="card">
+					  <div class="card-header">
+					    Number of files per category
+					  </div>
+						<div class="card-block">
+							<br>
+							<canvas id="barChart"></canvas>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<br><br>
+
+
+		<br><br>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="card">
+					  <div class="card-header">
+					    Total number of each file type (first 25 entries)
+					  </div>
+					  <div class="card-block">
+					    <h4 class="card-title" style="padding-left: 25px;"></h4>
+					    <p class="card-text" style="padding-left: 25px;">
+								<$ fileTypes $>
+							</p>
+					  </div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="card">
+					  <div class="card-header">
+					    Total size of each file type (first 25 entries)
+					  </div>
+					  <div class="card-block">
+					    <h4 class="card-title" style="padding-left: 25px;"></h4>
+							<p class="card-text" style="padding-left: 25px;">
+								<$ sizeFiletype $>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+
+
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="style/js/jquery-3.1.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="style/js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="style/js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="style/js/mdb.min.js"></script>
+
+
+		<!--TODO outsource js! -->
+		<script>
+		//bar
+		var ctxB = document.getElementById("barChart").getContext('2d');
+		var myBarChart = new Chart(ctxB, {
+		    type: 'bar',
+		    data: {
+				labels: <$ labels $>,
+				datasets: [{
+			    label: '# of Files',
+			    data: <$ data $>,
+			    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+			    borderColor: 'rgba(54, 162, 235, 1)',
+			    borderWidth: 1
+				}]
+			    }
+			});
+		</script>
+
+
+	</body>
+</html>

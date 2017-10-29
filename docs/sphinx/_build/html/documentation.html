@@ -1,0 +1,993 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Documentation &#8212; DC-CRWL Documentation  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Welcome to DC-CRWL’s documentation!" href="index.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-dcbot">
+<span id="documentation"></span><h1>Documentation<a class="headerlink" href="#module-dcbot" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="dcbot.DCbot">
+<em class="property">class </em><code class="descclassname">dcbot.</code><code class="descname">DCbot</code><a class="headerlink" href="#dcbot.DCbot" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="dcbot.DCbot.empty_thread_skeleton">
+<code class="descname">empty_thread_skeleton</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.empty_thread_skeleton" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dcbot.DCbot.fetch_users">
+<code class="descname">fetch_users</code><span class="sig-paren">(</span><em>sock</em><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.fetch_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fetches users from Nicklist if it is found and
+ignores users in Oplist</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>sock (int): Server connection socket.</dd>
+<dt>Returns:</dt>
+<dd>list: List of online users, otherwise empty list.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dcbot.DCbot.get_filelist">
+<code class="descname">get_filelist</code><span class="sig-paren">(</span><em>user</em>, <em>clink</em>, <em>trail</em><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.get_filelist" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Retrieve filelist (files.xml.bz2) from user.</dt>
+<dd>If successfull it is extracted and downloaded into tmp</dd>
+<dt>Args:</dt>
+<dd>user (string): The current username.
+clink (socket): Socket for direct connection with user.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="dcbot.DCbot.h_rate">
+<code class="descname">h_rate</code><span class="sig-paren">(</span><em>start</em>, <em>size</em><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.h_rate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dcbot.DCbot.nic">
+<code class="descname">nic</code><em class="property"> = 'tun0'</em><a class="headerlink" href="#dcbot.DCbot.nic" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dcbot.DCbot.nick">
+<code class="descname">nick</code><em class="property"> = 'defaultNickname'</em><a class="headerlink" href="#dcbot.DCbot.nick" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dcbot.DCbot.parse_args">
+<code class="descname">parse_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.parse_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parse arguments passed to script</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="dcbot.DCbot.reconnect">
+<code class="descname">reconnect</code><span class="sig-paren">(</span><em>host</em>, <em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.reconnect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="dcbot.DCbot.traverse_users">
+<code class="descname">traverse_users</code><span class="sig-paren">(</span><em>sock</em>, <em>userlist</em><span class="sig-paren">)</span><a class="headerlink" href="#dcbot.DCbot.traverse_users" title="Permalink to this definition">¶</a></dt>
+<dd><ul class="simple">
+<li><dl class="first docutils">
+<dt>Iterate over found users and for each:</dt>
+<dd><ul class="first last">
+<li>establish connection,</li>
+<li>perform handshake,</li>
+<li>retrieve filelist.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>Calculate percentage of users that send their info,</li>
+<li><dl class="first docutils">
+<dt>Write down server information.</dt>
+<dd><dl class="first last docutils">
+<dt>Args:</dt>
+<dd>sock (socket): Socket for server connection.
+userlist (list): List of available users.</dd>
+</dl>
+</dd>
+</dl>
+</li>
+</ul>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="dcbot.DCbot.user_count">
+<code class="descname">user_count</code><em class="property"> = 0</em><a class="headerlink" href="#dcbot.DCbot.user_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="dcbot.DCbot.verbose">
+<code class="descname">verbose</code><em class="property"> = False</em><a class="headerlink" href="#dcbot.DCbot.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-backend"></span><dl class="class">
+<dt id="backend.Database">
+<em class="property">class </em><code class="descclassname">backend.</code><code class="descname">Database</code><a class="headerlink" href="#backend.Database" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="backend.Database.add_file">
+<code class="descname">add_file</code><span class="sig-paren">(</span><em>name</em>, <em>type</em>, <em>category</em>, <em>size</em>, <em>pathID</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.add_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert file into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (string): Name of the file.
+type (string): Type of the file.
+category (string): Category of the file.
+size (int): Size of the file.
+pathID (int): FK of file’s path.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.add_filelist">
+<code class="descname">add_filelist</code><span class="sig-paren">(</span><em>md5sum</em>, <em>elapsed_time</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.add_filelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert file list into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>md5sum (string): md5 hash of the file list.
+elapsed_time (sting): elapsed download time
+of the file list in seconds.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.add_files">
+<code class="descname">add_files</code><span class="sig-paren">(</span><em>files</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.add_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert files into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><dl class="first last docutils">
+<dt>files (array): A Array with tupels:</dt>
+<dd>(name, type, category, size, pathID).</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.add_hub">
+<code class="descname">add_hub</code><span class="sig-paren">(</span><em>name</em>, <em>port</em>, <em>fetched</em>, <em>minShare</em>, <em>registration</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.add_hub" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert hub into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (string): Name or address of the hub.
+port (string): Port of hub’s service.
+fetch (string): Percentage of successful fetched users.
+minShare (boolean): minShare that you have to have to use the hub.
+registration (boolean): Is on hub a registration required.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.add_path">
+<code class="descname">add_path</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.add_path" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert path into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (string): Path of a file.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.add_user">
+<code class="descname">add_user</code><span class="sig-paren">(</span><em>nickname</em>, <em>filelist</em>, <em>cid</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.add_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert user into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>nickname (string): User nickname.
+filelist (string): md5 hash of user’s filelist.
+cid (string): User’s CID.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.begin_transaction">
+<code class="descname">begin_transaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.begin_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start a sqlite transaction</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.close_connection">
+<code class="descname">close_connection</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.close_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect from connected database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.commit">
+<code class="descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save changes to the connected database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.create_connection">
+<code class="descname">create_connection</code><span class="sig-paren">(</span><em>database</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.create_connection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>database: The database to connect to.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.end_transaction">
+<code class="descname">end_transaction</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.end_transaction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close a sqlite transaction</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.get_filelist_ID">
+<code class="descname">get_filelist_ID</code><span class="sig-paren">(</span><em>md5sum</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.get_filelist_ID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the file list ID (PK) of a file list.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>md5sum (string): md5 hash of the file list.</dd>
+<dt>Returns:</dt>
+<dd>fl_ID (int): The file list ID of the file list.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.get_hubID">
+<code class="descname">get_hubID</code><span class="sig-paren">(</span><em>name</em>, <em>port</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.get_hubID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the path ID (PK) of a path.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>name (string): Name or address of the hub.
+port (string): Port of the hub’s service.</dd>
+<dt>Returns:</dt>
+<dd>hub_ID (int): The hub ID of the path.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.get_pathID">
+<code class="descname">get_pathID</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.get_pathID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the path ID (PK) of a path.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>path (string): The path as string.</dd>
+<dt>Returns:</dt>
+<dd>path_id (int): The path ID of the path.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.get_user_ID_from_md5">
+<code class="descname">get_user_ID_from_md5</code><span class="sig-paren">(</span><em>md5sum</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.get_user_ID_from_md5" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the user ID (PK) from the md5 Hash of his file list.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>md5sum (string): md5 hash of the file list.</dd>
+<dt>Returns:</dt>
+<dd>user_ID (int): The user ID of the user.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.init_db">
+<code class="descname">init_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.init_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initial database: creating all tabels</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="backend.Database.update_filelist_size">
+<code class="descname">update_filelist_size</code><span class="sig-paren">(</span><em>filelist_size</em>, <em>md5sum</em><span class="sig-paren">)</span><a class="headerlink" href="#backend.Database.update_filelist_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates the file list size of the file list table.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>filelist_size (string): Size of the file list.
+md5sum (string): md5 hash of the file list.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-logs"></span><dl class="class">
+<dt id="logs.Logger">
+<em class="property">class </em><code class="descclassname">logs.</code><code class="descname">Logger</code><span class="sig-paren">(</span><em>verbose</em>, <em>debug</em><span class="sig-paren">)</span><a class="headerlink" href="#logs.Logger" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="attribute">
+<dt id="logs.Logger.debug">
+<code class="descname">debug</code><em class="property"> = False</em><a class="headerlink" href="#logs.Logger.debug" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="logs.Logger.debugLog">
+<code class="descname">debugLog</code><span class="sig-paren">(</span><em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#logs.Logger.debugLog" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write debug information to log file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>msg (string): The actual message to write.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="logs.Logger.display">
+<code class="descname">display</code><span class="sig-paren">(</span><em>msg</em>, <em>type='debug'</em><span class="sig-paren">)</span><a class="headerlink" href="#logs.Logger.display" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display logging information.</p>
+<dl class="docutils">
+<dt>Colors have different meanings:</dt>
+<dd><ul class="first last simple">
+<li>‘err’ is red.</li>
+<li>‘warn’ is yellow.</li>
+<li>‘ok’ is green.</li>
+<li>‘debug’ is blue.</li>
+<li>The rest ‘sent’, ‘recv’ and ‘info’ are colorless.</li>
+</ul>
+</dd>
+<dt>Args:</dt>
+<dd>msg (string): The message to display.
+type (string): The message type.</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="logs.Logger.verbose">
+<code class="descname">verbose</code><em class="property"> = False</em><a class="headerlink" href="#logs.Logger.verbose" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-settings"></span><span class="target" id="module-connection"></span><dl class="class">
+<dt id="connection.Connector">
+<em class="property">class </em><code class="descclassname">connection.</code><code class="descname">Connector</code><span class="sig-paren">(</span><em>logger</em><span class="sig-paren">)</span><a class="headerlink" href="#connection.Connector" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="connection.Connector.direct_connect">
+<code class="descname">direct_connect</code><span class="sig-paren">(</span><em>user</em>, <em>cc_port</em><span class="sig-paren">)</span><a class="headerlink" href="#connection.Connector.direct_connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a socket and listen for connections.</p>
+<p>As the name suggests, this function is essential to the protocol.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>user (string): Username (unused).
+cc_port (stirng): The port that connecting user will use.</dd>
+<dt>Returns:</dt>
+<dd>clink (socket): The socket for client to client connection.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="connection.Connector.get_ip_address">
+<code class="descname">get_ip_address</code><span class="sig-paren">(</span><em>nic</em><span class="sig-paren">)</span><a class="headerlink" href="#connection.Connector.get_ip_address" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the local ip address.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>nic (string): The network interface card.</dd>
+<dt>Returns:</dt>
+<dd>The ip address using nic as interface.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="connection.Connector.get_public_ip">
+<code class="descname">get_public_ip</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#connection.Connector.get_public_ip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the public ip address using ‘<a class="reference external" href="http://ip.42.pl/raw">http://ip.42.pl/raw</a>’.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>The public ip address.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="connection.Connector.open_sock">
+<code class="descname">open_sock</code><span class="sig-paren">(</span><em>host</em>, <em>port</em>, <em>nic</em><span class="sig-paren">)</span><a class="headerlink" href="#connection.Connector.open_sock" title="Permalink to this definition">¶</a></dt>
+<dd><p>Opens a socket to establish connection with hub.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>host (string): Hub (Server) domain name or ip address.
+port (string): Hub (Server) port number.
+nic (stirng): The network interface card (depricated).</dd>
+<dt>Returns:</dt>
+<dd>A socket for client to server connection.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="connection.Connector.signal_handler">
+<code class="descname">signal_handler</code><span class="sig-paren">(</span><em>signal</em>, <em>frame</em><span class="sig-paren">)</span><a class="headerlink" href="#connection.Connector.signal_handler" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal handler to close the connection to the hub.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">signal (signal): The signal.</p>
+<p class="last">frame (frame): The frame.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-manage"></span><dl class="class">
+<dt id="manage.Manage">
+<em class="property">class </em><code class="descclassname">manage.</code><code class="descname">Manage</code><a class="headerlink" href="#manage.Manage" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="manage.Manage.insert_filelist_into_db">
+<code class="descname">insert_filelist_into_db</code><span class="sig-paren">(</span><em>filelist_info</em><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.insert_filelist_into_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert filelist only if it is not in db already.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">filelist_info (string): Filelist information</p>
+<p class="last">(md5sum|elapsed_time)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.insert_files_into_db">
+<code class="descname">insert_files_into_db</code><span class="sig-paren">(</span><em>parsed_filelist</em>, <em>filename</em>, <em>filelist_size</em><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.insert_files_into_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inserts filelist information into database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>parsed_filelist (string): The filelist data.
+filename (string): The filename.
+filelist_size (string): The file size.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.insert_hub_into_db">
+<code class="descname">insert_hub_into_db</code><span class="sig-paren">(</span><em>hub_info</em><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.insert_hub_into_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert hub only if it is not in db already.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">hub_info (string): Hub information</p>
+<p class="last">(name|port|percentage of filelists feched|minShare|registration):</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.is_filelist_in_DB">
+<code class="descname">is_filelist_in_DB</code><span class="sig-paren">(</span><em>md5sum</em><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.is_filelist_in_DB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if user’s file list is already in DB.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>md5sum (string): md5 hash of file list.</dd>
+<dt>Returns:</dt>
+<dd>Boolean: True if user’s file list is already in DB, False else.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.parse_args">
+<code class="descname">parse_args</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.parse_args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses command-line arguments.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.parse_filelist">
+<code class="descname">parse_filelist</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.parse_filelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses downloaded filelists of users.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.parse_umap">
+<code class="descname">parse_umap</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.parse_umap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Insert umap informations into database. A file that maps:
+(username|checksum|md5sum|elapsed_time).</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.remove_all_tmpfiles">
+<code class="descname">remove_all_tmpfiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.remove_all_tmpfiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all tmp files after parsing.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="manage.Manage.stats">
+<code class="descname">stats</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#manage.Manage.stats" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calls the statistics.py instance.</p>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-protocol"></span><dl class="class">
+<dt id="protocol.DC">
+<em class="property">class </em><code class="descclassname">protocol.</code><code class="descname">DC</code><span class="sig-paren">(</span><em>logger</em>, <em>connector</em>, <em>BUFFER_SIZE</em>, <em>args</em>, <em>coupler</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="protocol.DC.calculate_key">
+<code class="descname">calculate_key</code><span class="sig-paren">(</span><em>lock</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.calculate_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implemented on the basis of information from
+Measurement and Analysis of Direct Connect Peer-to-Peer
+File Sharing Network by Karl Molin.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>lock (string): The calculated lock.</dd>
+<dt>Returns:</dt>
+<dd>the calculated key.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocol.DC.connect_to_me">
+<code class="descname">connect_to_me</code><span class="sig-paren">(</span><em>sock</em>, <em>user</em>, <em>ip</em>, <em>cc_port</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.connect_to_me" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send the ConnectToMe command to as user to connection to created socket.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>sock (socket): Server connection socket.
+user (stirng): Name of the user that is asked to connect.
+ip (string): crawler ip
+cc_port: (socket): crawlers c2c socket.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocol.DC.get_key">
+<code class="descname">get_key</code><span class="sig-paren">(</span><em>data</em>, <em>sock</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.get_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get servers lock from the whole server answer.</p>
+<dl class="docutils">
+<dt>Return:</dt>
+<dd>The calculated key.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocol.DC.handle_response_restrictions">
+<code class="descname">handle_response_restrictions</code><span class="sig-paren">(</span><em>message</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.handle_response_restrictions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handle restrictions displayed in the hello response message
+uses blacklisting because now standard was specified.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>message (string): The message to be checked.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocol.DC.handshake_c2c">
+<code class="descname">handshake_c2c</code><span class="sig-paren">(</span><em>user</em>, <em>clink</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.handshake_c2c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handshake between client and client to establish a P2P connection.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>user (string): Username.
+clink (socket): Socket for user to user connection.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocol.DC.handshake_c2s">
+<code class="descname">handshake_c2s</code><span class="sig-paren">(</span><em>sock</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.handshake_c2s" title="Permalink to this definition">¶</a></dt>
+<dd><p>Handshake between client and hub to establish a connection</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>sock (socket): Server connection socket.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="protocol.DC.send_infos">
+<code class="descname">send_infos</code><span class="sig-paren">(</span><em>sock</em><span class="sig-paren">)</span><a class="headerlink" href="#protocol.DC.send_infos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send the Client version to the connected Hub. Default version is 1.0091.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>sock (socket): User to Server socket connection.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-fileParser"></span><dl class="class">
+<dt id="fileParser.FileParser">
+<em class="property">class </em><code class="descclassname">fileParser.</code><code class="descname">FileParser</code><a class="headerlink" href="#fileParser.FileParser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="fileParser.FileParser.parse_hubs">
+<code class="descname">parse_hubs</code><span class="sig-paren">(</span><em>hub_file</em><span class="sig-paren">)</span><a class="headerlink" href="#fileParser.FileParser.parse_hubs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses a hublist file. A file that includes
+one hub address per line:</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>hub_file (string): hublist file.</dd>
+<dt>Returns:</dt>
+<dd>hubs (array): Array including for each entry a dict
+with hub address and hab port.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="fileParser.FileParser.parse_servinfo">
+<code class="descname">parse_servinfo</code><span class="sig-paren">(</span><em>servinfo</em><span class="sig-paren">)</span><a class="headerlink" href="#fileParser.FileParser.parse_servinfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the servinfo file. A file that maps:
+(Hubname|port|fetched|min_share|reg).</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>servinfo (string): servinfo file.</dd>
+<dt>Returns:</dt>
+<dd>hubs (array): Array including for each entry a dict
+with name, port, fetched, min_share and reg.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="fileParser.FileParser.parse_umap">
+<code class="descname">parse_umap</code><span class="sig-paren">(</span><em>umap_file</em><span class="sig-paren">)</span><a class="headerlink" href="#fileParser.FileParser.parse_umap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the umap file. A file that maps:
+(username|checksum|md5sum|elapsed_time).</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>umap (string): umap file.</dd>
+<dt>Returns:</dt>
+<dd>umap (array): Array including for each entry a dict
+with users, uid, md5sum and elapsed_time.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-fileListParser"></span><dl class="class">
+<dt id="fileListParser.FileListParser">
+<em class="property">class </em><code class="descclassname">fileListParser.</code><code class="descname">FileListParser</code><a class="headerlink" href="#fileListParser.FileListParser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="fileListParser.FileListParser.parseFilelist">
+<code class="descname">parseFilelist</code><span class="sig-paren">(</span><em>filelist</em><span class="sig-paren">)</span><a class="headerlink" href="#fileListParser.FileListParser.parseFilelist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses a given file list.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>filelist (string): File list to parse.</dd>
+<dt>Returns:</dt>
+<dd>user_filelist (array): Including for each file a dict with
+category, path, size, type, filename.</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-fileTypeParser"></span><dl class="class">
+<dt id="fileTypeParser.FileTypeParser">
+<em class="property">class </em><code class="descclassname">fileTypeParser.</code><code class="descname">FileTypeParser</code><a class="headerlink" href="#fileTypeParser.FileTypeParser" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="fileTypeParser.FileTypeParser.get_file_categories">
+<code class="descname">get_file_categories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fileTypeParser.FileTypeParser.get_file_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all known file categories.
+The location of the FILETYPES file is written in the settings.py.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>file_categories (array): All file categories.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="fileTypeParser.FileTypeParser.get_file_types">
+<code class="descname">get_file_types</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#fileTypeParser.FileTypeParser.get_file_types" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parsed all known file types from the static FILETYPES file.
+The location of the FILETYPES file is written in the settings.py.</p>
+<blockquote>
+<div><dl class="docutils">
+<dt>Returns:</dt>
+<dd>file_types (dict): Key: Category, Values: list of file types.</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-statistics"></span><dl class="class">
+<dt id="statistics.Statistics">
+<em class="property">class </em><code class="descclassname">statistics.</code><code class="descname">Statistics</code><a class="headerlink" href="#statistics.Statistics" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="statistics.Statistics.average_filelist_size">
+<code class="descname">average_filelist_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.average_filelist_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write average of file list size into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.average_filesize">
+<code class="descname">average_filesize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.average_filesize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write average of file size into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.average_fl_download_time">
+<code class="descname">average_fl_download_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.average_fl_download_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write average download time of file lists into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.connection_to_db">
+<code class="descname">connection_to_db</code><span class="sig-paren">(</span><em>database</em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.connection_to_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a database.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>database: The database to connect to.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.disconnection_from_db">
+<code class="descname">disconnection_from_db</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.disconnection_from_db" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect from connected database.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.file_categories_as_stringArray">
+<code class="descname">file_categories_as_stringArray</code><span class="sig-paren">(</span><em>categories</em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.file_categories_as_stringArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all file categories as string array.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>categories (array): File categories.</dd>
+<dt>Returns:</dt>
+<dd>categories_arr (string): String array of all file categories.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.filetype">
+<code class="descname">filetype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.filetype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write total number of each file type into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.fill_template">
+<code class="descname">fill_template</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.fill_template" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses statistic templates and tmp files
+to creates statistic.html.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.format_number">
+<code class="descname">format_number</code><span class="sig-paren">(</span><em>number</em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.format_number" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="docutils">
+<dt>Formats a number corresponding to the unit size:</dt>
+<dd><ul class="first last simple">
+<li>supports KB, MB, GB, TB, PB.</li>
+</ul>
+</dd>
+<dt>Args:</dt>
+<dd>Number to format.</dd>
+<dt>Returns:</dt>
+<dd>Formated number.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.get_all_categories">
+<code class="descname">get_all_categories</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.get_all_categories" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all categories from FileTypeParser.</p>
+<dl class="docutils">
+<dt>Returns:</dt>
+<dd>array: Array of all categories.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.median_filelist_size">
+<code class="descname">median_filelist_size</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.median_filelist_size" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write median of file list size into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.median_filesize">
+<code class="descname">median_filesize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.median_filesize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write median of file size into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.median_fl_download_time">
+<code class="descname">median_fl_download_time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.median_fl_download_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write median download time of file lists into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.no_of_categories_as_stringArray">
+<code class="descname">no_of_categories_as_stringArray</code><span class="sig-paren">(</span><em>categories</em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.no_of_categories_as_stringArray" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get number of files of each categoriy as string array.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>categories (array): Categories.</dd>
+<dt>Returns:</dt>
+<dd>numbers (string): String array of numbers of files each category.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.number_of_files">
+<code class="descname">number_of_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.number_of_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write total number of files into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.number_of_hubs">
+<code class="descname">number_of_hubs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.number_of_hubs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write total number of hubs into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.number_of_users">
+<code class="descname">number_of_users</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.number_of_users" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write total number of users into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.perform_category_Info">
+<code class="descname">perform_category_Info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.perform_category_Info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs category statistic informations.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.perform_file_info">
+<code class="descname">perform_file_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.perform_file_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs file statistic informations.</p>
+<ul class="simple">
+<li>number of files</li>
+<li>total file size</li>
+<li>average file size</li>
+<li>median file size</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.perform_filelist_info">
+<code class="descname">perform_filelist_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.perform_filelist_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs filel ist statistic informations.</p>
+<ul class="simple">
+<li>average file list size</li>
+<li>median file list size</li>
+<li>average download time</li>
+<li>median download time</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.perform_general_information">
+<code class="descname">perform_general_information</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.perform_general_information" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs general statistic informations.</p>
+<ul class="simple">
+<li>Number of users</li>
+<li>number of hubs</li>
+<li>number of each file type</li>
+<li>size of each file type</li>
+</ul>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.read_file">
+<code class="descname">read_file</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.read_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a given file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd>filename (string): Name of file.</dd>
+<dt>Returns:</dt>
+<dd>content (string): The conten of the given file.</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.remove_all_stat_files">
+<code class="descname">remove_all_stat_files</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.remove_all_stat_files" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all stat files after calculating statistics.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.show_statistics">
+<code class="descname">show_statistics</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.show_statistics" title="Permalink to this definition">¶</a></dt>
+<dd><p>Implement main statistic functionality</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.size_filetype">
+<code class="descname">size_filetype</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.size_filetype" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write total size of each file type into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.total_filesize">
+<code class="descname">total_filesize</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.total_filesize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write total file size into tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.write_category_file">
+<code class="descname">write_category_file</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.write_category_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates category tmp file.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="statistics.Statistics.write_into_tmp_file">
+<code class="descname">write_into_tmp_file</code><span class="sig-paren">(</span><em>filename</em>, <em>msg</em><span class="sig-paren">)</span><a class="headerlink" href="#statistics.Statistics.write_into_tmp_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write a message into a tmp file.</p>
+<dl class="docutils">
+<dt>Args:</dt>
+<dd><p class="first">filename (string): Name of file to write into.</p>
+<p class="last">msg (string): Message to write into file.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">DC-CRWL Documentation</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="index.html" title="previous chapter">Welcome to DC-CRWL’s documentation!</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Mahdi Enan & Florian Platzer.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.3</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/documentation.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

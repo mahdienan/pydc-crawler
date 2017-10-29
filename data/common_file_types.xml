@@ -1,0 +1,259 @@
+<FileTypes>
+	<FileType Name="Text">
+		<FileExtension Name="DOC"/>
+		<FileExtension Name="DOCX"/>
+		<FileExtension Name="LOG"/>
+		<FileExtension Name="MSG"/>
+		<FileExtension Name="ODT"/>
+		<FileExtension Name="PAGES"/>
+		<FileExtension Name="RTF"/>
+		<FileExtension Name="TEX"/>
+		<FileExtension Name="TXT"/>
+		<FileExtension Name="WPD"/>
+		<FileExtension Name="WPS"/>
+		<FileExtension Name="ANS"/>
+		<FileExtension Name="NFO"/>
+	</FileType>
+	<FileType Name="Data">
+		<FileExtension Name="CSV"/>
+		<FileExtension Name="DAT"/>
+		<FileExtension Name="GED"/>
+		<FileExtension Name="KEY"/>
+		<FileExtension Name="KEYCHAIN"/>
+		<FileExtension Name="PPS"/>
+		<FileExtension Name="PPT"/>
+		<FileExtension Name="PPTX"/>
+		<FileExtension Name="SDF"/>
+		<FileExtension Name="TAR"/>
+		<FileExtension Name="TAX2016"/>
+		<FileExtension Name="VCF"/>
+		<FileExtension Name="XML"/>
+		<FileExtension Name="TMX"/>
+		<FileExtension Name="OPAL"/>
+		<FileExtension Name="OTLN"/>
+		<FileExtension Name="OVA"/>
+	</FileType>
+	<FileType Name="Audio">
+		<FileExtension Name="AIF"/>
+		<FileExtension Name="IFF"/>
+		<FileExtension Name="M3U"/>
+		<FileExtension Name="M4A"/>
+		<FileExtension Name="MID"/>
+		<FileExtension Name="MP3"/>
+		<FileExtension Name="MPA"/>
+		<FileExtension Name="WAV"/>
+		<FileExtension Name="WMA"/>
+	</FileType>
+	<FileType Name="Video">
+		<FileExtension Name="3G2"/>
+		<FileExtension Name="3GP"/>
+		<FileExtension Name="ASF"/>
+		<FileExtension Name="AVI"/>
+		<FileExtension Name="FLV"/>
+		<FileExtension Name="M4V"/>
+		<FileExtension Name="MOV"/>
+		<FileExtension Name="MP4"/>
+		<FileExtension Name="MP6"/>
+		<FileExtension Name="MPEG"/>
+		<FileExtension Name="MPEG4"/>
+		<FileExtension Name="MPG"/>
+		<FileExtension Name="RM"/>
+		<FileExtension Name="SRT"/>
+		<FileExtension Name="SWF"/>
+		<FileExtension Name="VOB"/>
+		<FileExtension Name="WMV"/>
+		<FileExtension Name="MKV"/>
+		<FileExtension Name="SUB"/>
+	</FileType>
+	<FileType Name="Multimedia">
+		<FileExtension Name="OGG"/>
+		<FileExtension Name="OGA"/>
+		<FileExtension Name="OGV"/>
+		<FileExtension Name="OGX"/>
+	</FileType>
+	<FileType Name="3D">
+		<FileExtension Name="3DM"/>
+		<FileExtension Name="3DS"/>
+		<FileExtension Name="MAX"/>
+		<FileExtension Name="OBJ"/>
+		<FileExtension Name="STP"/>
+		<FileExtension Name="MTL"/>
+		<FileExtension Name="FBX"/>
+	</FileType>
+	<FileType Name="Raster">
+		<FileExtension Name="BMP"/>
+		<FileExtension Name="DDS"/>
+		<FileExtension Name="GIF"/>
+		<FileExtension Name="JPG"/>
+		<FileExtension Name="JPEG"/>
+		<FileExtension Name="IMG"/>
+		<FileExtension Name="PNG"/>
+		<FileExtension Name="PSD"/>
+		<FileExtension Name="PSPIMAGE"/>
+		<FileExtension Name="TGA"/>
+		<FileExtension Name="THM"/>
+		<FileExtension Name="TIF"/>
+		<FileExtension Name="TIFF"/>
+		<FileExtension Name="YUV"/>
+	</FileType>
+	<FileType Name="Vector">
+		<FileExtension Name="AI"/>
+		<FileExtension Name="EPS"/>
+		<FileExtension Name="PS"/>
+		<FileExtension Name="SVG"/>
+	</FileType>
+	<FileType Name="Page">
+		<FileExtension Name="INDD"/>
+		<FileExtension Name="PCT"/>
+		<FileExtension Name="PDF"/>
+	</FileType>
+	<FileType Name="Spreadsheet">
+		<FileExtension Name="XLR"/>
+		<FileExtension Name="XLS"/>
+		<FileExtension Name="XLSX"/>
+	</FileType>
+	<FileType Name="Database">
+		<FileExtension Name="ACCDB"/>
+		<FileExtension Name="DB"/>
+		<FileExtension Name="DBF"/>
+		<FileExtension Name="MDB"/>
+		<FileExtension Name="PDB"/>
+		<FileExtension Name="SQL"/>
+	</FileType>
+	<FileType Name="Executable">
+		<FileExtension Name="APK"/>
+		<FileExtension Name="APP"/>
+		<FileExtension Name="BAT"/>
+		<FileExtension Name="CGI"/>
+		<FileExtension Name="COM"/>
+		<FileExtension Name="EXE"/>
+		<FileExtension Name="GADGET"/>
+		<FileExtension Name="JAR"/>
+		<FileExtension Name="WSF"/>
+	</FileType>
+	<FileType Name="Game">
+		<FileExtension Name="DEM"/>
+		<FileExtension Name="GAM"/>
+		<FileExtension Name="NES"/>
+		<FileExtension Name="ROM"/>
+		<FileExtension Name="SAV"/>
+		<FileExtension Name="ULX"/>
+		<FileExtension Name="BIG"/>
+		<FileExtension Name="TXD"/>
+	</FileType>
+	<FileType Name="CAD">
+		<FileExtension Name="DWG"/>
+		<FileExtension Name="DXF"/>
+	</FileType>
+	<FileType Name="GIS">
+		<FileExtension Name="GPX"/>
+		<FileExtension Name="KML"/>
+		<FileExtension Name="KMZ"/>
+	</FileType>
+	<FileType Name="Web">
+		<FileExtension Name="ASP"/>
+		<FileExtension Name="ASPX"/>
+		<FileExtension Name="CER"/>
+		<FileExtension Name="CFM"/>
+		<FileExtension Name="CSR"/>
+		<FileExtension Name="CSS"/>
+		<FileExtension Name="HTM"/>
+		<FileExtension Name="HTML"/>
+		<FileExtension Name="JS"/>
+		<FileExtension Name="JSP"/>
+		<FileExtension Name="PHP"/>
+		<FileExtension Name="RSS"/>
+		<FileExtension Name="XHTML"/>
+	</FileType>
+	<FileType Name="Plugin">
+		<FileExtension Name="CRX"/>
+		<FileExtension Name="PLUGIN"/>
+	</FileType>
+	<FileType Name="Font">
+		<FileExtension Name="FNT"/>
+		<FileExtension Name="FON"/>
+		<FileExtension Name="OTF"/>
+		<FileExtension Name="TTF"/>
+	</FileType>
+	<FileType Name="System">
+		<FileExtension Name="CAB"/>
+		<FileExtension Name="CPL"/>
+		<FileExtension Name="CUR"/>
+		<FileExtension Name="DESKTHEMEPACK"/>
+		<FileExtension Name="DLL"/>
+		<FileExtension Name="DMP"/>
+		<FileExtension Name="DRV"/>
+		<FileExtension Name="ICNS"/>
+		<FileExtension Name="ICO"/>
+		<FileExtension Name="LNK"/>
+		<FileExtension Name="SYS"/>
+		<FileExtension Name="ABK"/>
+	</FileType>
+	<FileType Name="Settings">
+		<FileExtension Name="CFG"/>
+		<FileExtension Name="INI"/>
+		<FileExtension Name="PRF"/>
+	</FileType>
+	<FileType Name="Encoded">
+		<FileExtension Name="HQX"/>
+		<FileExtension Name="MIM"/>
+		<FileExtension Name="UUE"/>
+	</FileType>
+	<FileType Name="Compressed">
+		<FileExtension Name="7Z"/>
+		<FileExtension Name="CBR"/>
+		<FileExtension Name="DEB"/>
+		<FileExtension Name="GZ"/>
+		<FileExtension Name="PKG"/>
+		<FileExtension Name="RAR"/>
+		<FileExtension Name="RPM"/>
+		<FileExtension Name="SITX"/>
+		<FileExtension Name="TARGZ"/>
+		<FileExtension Name="ZIP"/>
+		<FileExtension Name="ZIPX"/>
+	</FileType>
+	<FileType Name="Disk">
+		<FileExtension Name="BIN"/>
+		<FileExtension Name="CUE"/>
+		<FileExtension Name="DMG"/>
+		<FileExtension Name="ISO"/>
+		<FileExtension Name="MDF"/>
+		<FileExtension Name="TOAST"/>
+		<FileExtension Name="VCD"/>
+	</FileType>
+	<FileType Name="Developer">
+		<FileExtension Name="C"/>
+		<FileExtension Name="CLASS"/>
+		<FileExtension Name="CPP"/>
+		<FileExtension Name="CS"/>
+		<FileExtension Name="DTD"/>
+		<FileExtension Name="FLA"/>
+		<FileExtension Name="H"/>
+		<FileExtension Name="JAVA"/>
+		<FileExtension Name="LUA"/>
+		<FileExtension Name="M"/>
+		<FileExtension Name="PL"/>
+		<FileExtension Name="PY"/>
+		<FileExtension Name="SH"/>
+		<FileExtension Name="SLN"/>
+		<FileExtension Name="SWIFT"/>
+		<FileExtension Name="VB"/>
+		<FileExtension Name="SVF"/>
+		<FileExtension Name="VCXPROJ"/>
+		<FileExtension Name="XCODEPROJ"/>
+		<FileExtension Name="SLX"/>
+		<FileExtension Name="IDE"/>
+	</FileType>
+	<FileType Name="Backup">
+		<FileExtension Name="BAK"/>
+		<FileExtension Name="BAK"/>
+		<FileExtension Name="TMP"/>
+	</FileType>
+	<FileType Name="Misc">
+		<FileExtension Name="CRDOWNLOAD"/>
+		<FileExtension Name="ICS"/>
+		<FileExtension Name="MSI"/>
+		<FileExtension Name="PART"/>
+		<FileExtension Name="TORRENT"/>
+	</FileType>
+</FileTypes>
