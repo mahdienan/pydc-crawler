@@ -2,7 +2,5 @@
 
 DCBot is a tool that implements parts of the NMDC protocol and crawls dc hubs to collect all user file lists. DCBot is written in python. For more information about NMDC check out http://nmdc.sourceforge.net/NMDC.html.
 
-* Download:
-  - 
 * Usage:
   - ./dcbot.py -a ADDRESS [-d DEBUG] -p PORT [-n NICK] [-v]
